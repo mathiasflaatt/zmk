@@ -11,3 +11,18 @@ Check out the website to learn more: https://zmk.dev/.
 You can also come join our [ZMK Discord Server](https://zmk.dev/community/discord/invite).
 
 To review features, check out the [feature overview](https://zmk.dev/docs/). ZMK is under active development, and new features are listed with the [enhancement label](https://github.com/zmkfirmware/zmk/issues?q=is%3Aissue+is%3Aopen+label%3Aenhancement) in GitHub. Please feel free to add 👍 to the issue description of any requests to upvote the feature.
+
+### Current changes:
+- Tri-State [https://github.com/zmkfirmware/zmk/pull/1366]
+- Smart-Layser [https://github.com/zmkfirmware/zmk/pull/1451]
+
+### How to add remote PR's to your local repo
+Find branch name and upstream url from PR
+Add as follow
+```bash
+git remote add -t {branch-name} {upstream-name} {url}
+git fetch {upstream-name}
+git merge {upstream-name}/{branch-name} --squash
+git commit -m ""
+git push
+```
