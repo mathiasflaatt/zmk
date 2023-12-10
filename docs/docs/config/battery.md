@@ -10,6 +10,18 @@ See [Configuration Overview](index.md) for instructions on how to change these s
 :::note
 
 On MacOS the BLE battery reporting packets can cause the computer to wakeup from sleep, the battery service can be disabled indepently of battery monitoring (allowing the battery level to be displayed on a screen or through a custom lighting implementation) by setting `CONFIG_BT_BAS=n`
+### Kconfig
+
+Definition file: [zmk/app/Kconfig](https://github.com/zmkfirmware/zmk/blob/main/app/Kconfig)
+
+| Config                               | Type | Description                                            | Default |
+| ------------------------------------ | ---- | ------------------------------------------------------ | ------- |
+| `CONFIG_ZMK_BATTERY_REPORTING`       | bool | Enables/disables all battery level detection/reporting | n       |
+| `CONFIG_ZMK_BATTERY_REPORT_INTERVAL` | int  | Battery level report interval in seconds               | 60      |
+
+:::note Default setting
+
+While `CONFIG_ZMK_BATTERY_REPORTING` is disabled by default it is implied by `CONFIG_ZMK_BLE`, thus any board with BLE enabled will have this automatically enabled unless explicitly overriden.
 
 :::
 
@@ -39,7 +51,7 @@ Driver for reading the voltage of a battery using a Nordic nRF52's VDDH pin. Thi
 
 Applies to: `compatible = "zmk,battery-nrf-vddh"`
 
-Definition file: [zmk/app/drivers/zephyr/dts/bindings/sensor/zmk,battery-nrf-vddh.yaml](https://github.com/zmkfirmware/zmk/blob/main/app/drivers/zephyr/dts/bindings/sensor/zmk%2Cbattery-nrf-vddh.yaml)
+Definition file: [zmk/app/module/dts/bindings/sensor/zmk,battery-nrf-vddh.yaml](https://github.com/zmkfirmware/zmk/blob/main/app/module/dts/bindings/sensor/zmk%2Cbattery-nrf-vddh.yaml)
 
 | Property | Type   | Description               |
 | -------- | ------ | ------------------------- |
